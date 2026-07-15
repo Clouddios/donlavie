@@ -56,17 +56,17 @@ Teste manualmente redimensionando a janela do navegador ou usando o modo de disp
 Por ser um site estático, pode ser publicado em qualquer serviço de hospedagem de arquivos, por exemplo:
 
 - **Netlify / Vercel:** arraste a pasta do projeto ou conecte um repositório Git — nenhum comando de build é necessário (deixe o campo de build vazio).
-- **GitHub Pages:** suba os arquivos para um repositório e ative o Pages apontando para a branch/pasta raiz.
+- **GitHub Pages:** Settings → Pages → Source: "Deploy from a branch" → Branch: `main` / `(root)` → Save. Fica disponível em `https://<usuário>.github.io/<repositório>/` depois de ~1 minuto. Bom para mostrar o link para o cliente antes de ter um domínio próprio — não é pensado como endereço final (é preciso repositório público no plano gratuito).
 
 Nenhuma variável de ambiente ou configuração de servidor é necessária.
 
-### ⚠️ Pendência ao publicar: trocar o domínio placeholder
+### ⚠️ Pendência ao trocar de domínio
 
-O `index.html` tem 3 ocorrências de `https://SEU-DOMINIO-AQUI.com` (nas tags `og:image`, `og:url` e no JSON-LD). Assim que tiver o domínio definitivo, busque e substitua esse texto pela URL real — sem isso, o preview do link ao compartilhar no WhatsApp/Instagram não mostra a foto corretamente, e o Google não consegue confirmar a imagem do negócio.
+O `index.html` tem 3 ocorrências da URL de preview/SEO (tags `og:image`, `og:url` e no JSON-LD) — hoje apontando para `https://clouddios.github.io/donlavie` (GitHub Pages). Quando o site for para o domínio definitivo, busque e substitua essa URL — sem isso, o preview do link ao compartilhar no WhatsApp/Instagram não mostra a foto corretamente, e o Google não consegue confirmar a imagem do negócio.
 
 ```bash
 # exemplo, trocando pelo domínio real:
-sed -i 's#https://SEU-DOMINIO-AQUI.com#https://www.donlavie.com.br#g' index.html
+sed -i 's#https://clouddios.github.io/donlavie#https://www.donlavie.com.br#g' index.html
 ```
 
 ## SEO e compartilhamento
