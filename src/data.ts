@@ -80,7 +80,7 @@ export const duvidas = [
 ];
 
 export const contato = {
-  // ATENÇÃO: a bio do Instagram diz número 1766; o site antigo e os diretórios dizem 1700. Confirmar.
+  // Número 1700 confirmado pelo cliente em 18/11/2026 (a bio do Instagram mostra 1766, que está errado).
   endereco: 'Av. Dr. Afonso Vergueiro, 1700',
   complemento: 'Sorocaba Shopping · Centro, Sorocaba/SP',
   horario: 'Segunda a sábado, 10h às 22h',
