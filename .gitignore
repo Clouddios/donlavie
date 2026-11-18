@@ -1,3 +1,12 @@
 .claude/
 .DS_Store
 Thumbs.db
+.impeccable/review/
+.impeccable/direction-payload*.json
+.impeccable/brief-index.md
+
+node_modules/
+dist/
+dist-ssr/
+.superpowers/
+.taste-skill/

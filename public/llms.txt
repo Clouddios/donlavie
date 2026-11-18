@@ -1,0 +1,32 @@
+# Don La Vié
+
+> Salão de beleza no Sorocaba Shopping, em Sorocaba/SP, especializado em mega hair e visagismo. Atende também corte, coloração, barbearia, manicure, sobrancelhas, micropigmentação e perucas. O agendamento é feito pelo WhatsApp.
+
+## Dados do salão
+
+- Nome: Don La Vié (Espaço de Beleza)
+- Endereço: Av. Dr. Afonso Vergueiro, 1700, Sorocaba Shopping, Centro, Sorocaba/SP, Brasil
+- Horário: segunda a sábado, das 10h às 22h. Fechado aos domingos.
+- WhatsApp e celular: (15) 98824-5917
+- Telefone fixo: (15) 3211-5732
+- Estacionamento: o do Sorocaba Shopping
+- Direção de visagismo: Don Alexandre
+
+## Serviços
+
+- Mega hair: nó italiano, queratina, fita e ponto americano, da aplicação à manutenção.
+- Visagismo: corte e cor pensados a partir do rosto e do estilo de vida do cliente.
+- Cabelo e cor: cortes, coloração, mechas e tratamentos capilares.
+- Barbearia: barba, corte masculino e acabamento.
+- Manicure e estética: mãos, pés, sobrancelhas e micropigmentação.
+- Perucas e manutenção: perucas sob medida e manutenção de mega hair.
+
+O site não publica preços. Valores e disponibilidade são informados pelo WhatsApp.
+
+## Links
+
+- [Site](https://clouddios.github.io/donlavie/): página única com serviços, trabalhos, endereço e contato
+- [Agendar no WhatsApp](https://wa.me/5515988245917): canal de agendamento
+- [Instagram do salão](https://www.instagram.com/donlavie_): trabalhos recentes
+- [Instagram de mega hair](https://www.instagram.com/don.megahairsorocaba): trabalhos de mega hair
+- [Como chegar](https://www.google.com/maps?q=Av.+Dr.+Afonso+Vergueiro,+1700+-+Sorocaba+Shopping,+Sorocaba+-+SP): mapa

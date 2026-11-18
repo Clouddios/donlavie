@@ -1,0 +1,5 @@
+# Don La Vié — todos os buscadores e assistentes de IA podem ler o site.
+User-agent: *
+Allow: /
+
+Sitemap: https://clouddios.github.io/donlavie/sitemap.xml

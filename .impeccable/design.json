@@ -1,0 +1,391 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-13T18:11:53Z",
+  "title": "Design System: Don La Vié",
+  "extensions": {
+    "colorMeta": {
+      "preto": {
+        "role": "neutral",
+        "displayName": "Preto de Camarim",
+        "canonical": "#0A0908",
+        "tonalRamp": [
+          "oklch(15% 0.003 69)",
+          "oklch(26% 0.003 69)",
+          "oklch(38% 0.003 69)",
+          "oklch(50% 0.003 69)",
+          "oklch(61% 0.003 69)",
+          "oklch(72% 0.003 69)",
+          "oklch(84% 0.003 69)",
+          "oklch(95% 0.003 69)"
+        ]
+      },
+      "vidro": {
+        "role": "neutral",
+        "displayName": "Vidro Escuro",
+        "canonical": "#1B1815",
+        "tonalRamp": [
+          "oklch(15% 0.007 67)",
+          "oklch(26% 0.007 67)",
+          "oklch(38% 0.007 67)",
+          "oklch(50% 0.007 67)",
+          "oklch(61% 0.007 67)",
+          "oklch(72% 0.007 67)",
+          "oklch(84% 0.007 67)",
+          "oklch(95% 0.007 67)"
+        ]
+      },
+      "bronze": {
+        "role": "primary",
+        "displayName": "Bronze Apagado",
+        "canonical": "#5E4D2A",
+        "tonalRamp": [
+          "oklch(15% 0.056 84)",
+          "oklch(26% 0.056 84)",
+          "oklch(38% 0.056 84)",
+          "oklch(50% 0.056 84)",
+          "oklch(61% 0.056 84)",
+          "oklch(72% 0.056 84)",
+          "oklch(84% 0.056 84)",
+          "oklch(95% 0.056 84)"
+        ]
+      },
+      "ouro": {
+        "role": "primary",
+        "displayName": "Ouro de Bancada",
+        "canonical": "#D4AF5A",
+        "tonalRamp": [
+          "oklch(15% 0.112 86)",
+          "oklch(26% 0.112 86)",
+          "oklch(38% 0.112 86)",
+          "oklch(50% 0.112 86)",
+          "oklch(61% 0.112 86)",
+          "oklch(72% 0.112 86)",
+          "oklch(84% 0.112 86)",
+          "oklch(95% 0.112 86)"
+        ]
+      },
+      "luz": {
+        "role": "primary",
+        "displayName": "Luz Quente",
+        "canonical": "#F3D98B",
+        "tonalRamp": [
+          "oklch(15% 0.102 92)",
+          "oklch(26% 0.102 92)",
+          "oklch(38% 0.102 92)",
+          "oklch(50% 0.102 92)",
+          "oklch(61% 0.102 92)",
+          "oklch(72% 0.102 92)",
+          "oklch(84% 0.102 92)",
+          "oklch(95% 0.102 92)"
+        ]
+      },
+      "luz-alta": {
+        "role": "primary",
+        "displayName": "Luz Alta",
+        "canonical": "#FFF1C9",
+        "tonalRamp": [
+          "oklch(15% 0.054 91)",
+          "oklch(26% 0.054 91)",
+          "oklch(38% 0.054 91)",
+          "oklch(50% 0.054 91)",
+          "oklch(61% 0.054 91)",
+          "oklch(72% 0.054 91)",
+          "oklch(84% 0.054 91)",
+          "oklch(95% 0.054 91)"
+        ]
+      },
+      "marfim": {
+        "role": "neutral",
+        "displayName": "Marfim",
+        "canonical": "#F4ECDD",
+        "tonalRamp": [
+          "oklch(15% 0.022 83)",
+          "oklch(26% 0.022 83)",
+          "oklch(38% 0.022 83)",
+          "oklch(50% 0.022 83)",
+          "oklch(61% 0.022 83)",
+          "oklch(72% 0.022 83)",
+          "oklch(84% 0.022 83)",
+          "oklch(95% 0.022 83)"
+        ]
+      },
+      "suave": {
+        "role": "neutral",
+        "displayName": "Areia",
+        "canonical": "#B8AC96",
+        "tonalRamp": [
+          "oklch(15% 0.034 83)",
+          "oklch(26% 0.034 83)",
+          "oklch(38% 0.034 83)",
+          "oklch(50% 0.034 83)",
+          "oklch(61% 0.034 83)",
+          "oklch(72% 0.034 83)",
+          "oklch(84% 0.034 83)",
+          "oklch(95% 0.034 83)"
+        ]
+      },
+      "linha": {
+        "role": "neutral",
+        "displayName": "Fio Dourado",
+        "canonical": "rgba(212,175,90,.24)",
+        "tonalRamp": [
+          "oklch(15% 0.112 86)",
+          "oklch(26% 0.112 86)",
+          "oklch(38% 0.112 86)",
+          "oklch(50% 0.112 86)",
+          "oklch(61% 0.112 86)",
+          "oklch(72% 0.112 86)",
+          "oklch(84% 0.112 86)",
+          "oklch(95% 0.112 86)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "O h1 do hero, em didone na cor luz; ênfase em itálico 400 na cor luz-alta."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Títulos de seção (h2), em didone na cor luz."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Títulos de bloco em didone: motivos do salão, nome da marca, faixa de contato."
+      },
+      "espelho-nome": {
+        "displayName": "Espelho-nome",
+        "purpose": "Nome do serviço dentro do espelho; ouro apagado, luz-alta aceso."
+      },
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "Parágrafo de abertura do hero, em areia, até 46ch."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Texto corrente em marfim ou areia, 34 a 54ch."
+      },
+      "body-sm": {
+        "displayName": "Body-sm",
+        "purpose": "Links da nav e rodapé."
+      },
+      "button": {
+        "displayName": "Button",
+        "purpose": "Rótulo do botão de WhatsApp."
+      }
+    },
+    "shadows": [
+      {
+        "name": "halo",
+        "value": "0 14px 70px -6px rgba(243,217,139,.34), 0 4px 18px -2px rgba(243,217,139,.3)",
+        "purpose": "Luz que o anel dos espelhos grandes joga para fora (var(--halo))."
+      },
+      {
+        "name": "halo-dentro",
+        "value": "inset 0 0 34px 2px rgba(243,217,139,.38)",
+        "purpose": "A mesma luz para dentro do vidro; sempre junto com o halo (var(--halo-dentro))."
+      },
+      {
+        "name": "halo-p",
+        "value": "0 8px 30px -4px rgba(243,217,139,.36), 0 2px 10px -2px rgba(243,217,139,.3)",
+        "purpose": "Halo externo dos espelhos de serviço."
+      },
+      {
+        "name": "halo-p-dentro",
+        "value": "inset 0 0 16px 1px rgba(243,217,139,.4)",
+        "purpose": "Halo interno dos espelhos de serviço."
+      },
+      {
+        "name": "brilho-botao",
+        "value": "0 10px 34px -12px rgba(243,217,139,.55)",
+        "purpose": "O botão de WhatsApp em repouso."
+      },
+      {
+        "name": "brilho-botao-hover",
+        "value": "0 14px 44px -10px rgba(243,217,139,.8)",
+        "purpose": "O botão de WhatsApp no hover."
+      },
+      {
+        "name": "sombra-barra",
+        "value": "0 14px 34px -10px rgba(0,0,0,.85)",
+        "purpose": "Única sombra escura: separa a barra fixa do conteúdo."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(.16,1,.3,1)",
+        "purpose": "Curva única de saída exponencial para toda transição (var(--ease))."
+      },
+      {
+        "name": "acender-espelho",
+        "value": ".9s",
+        "purpose": "Anel, halo e filtro da imagem dos espelhos grandes e da vitrine ao entrar na tela."
+      },
+      {
+        "name": "acender-servico",
+        "value": ".5s",
+        "purpose": "Anel, vidro e nome do espelho de serviço ao ser escolhido."
+      },
+      {
+        "name": "acender-hero",
+        "value": "1.5s (anel) / 1.8s (foto), atraso .2s",
+        "purpose": "O espelho do hero acende no carregamento."
+      },
+      {
+        "name": "hover",
+        "value": ".3s a .4s",
+        "purpose": "Cor de links, botões e fundo da nav."
+      },
+      {
+        "name": "filtro-apagado",
+        "value": "brightness(.4) saturate(.6)",
+        "purpose": "Imagem dentro de um espelho ainda apagado (vitrine: brightness(.45))."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "tablet",
+        "value": "900px"
+      },
+      {
+        "name": "celular",
+        "value": "560px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Botão de WhatsApp",
+      "kind": "button",
+      "refersTo": "botao-whatsapp",
+      "description": "A única ação primária: cápsula dourada cheia que leva ao agendamento.",
+      "html": "<a class=\"ds-btn-wa\" href=\"#\"><svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"currentColor\"><path d=\"M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1 1 12 20zm4.4-6c-.2-.1-1.4-.7-1.7-.8s-.4-.1-.5.1-.6.8-.8 1-.3.2-.5.1a6.5 6.5 0 0 1-1.9-1.2 7.3 7.3 0 0 1-1.4-1.7c-.1-.3 0-.4.1-.5l.4-.4.2-.4a.5.5 0 0 0 0-.5c0-.1-.5-1.3-.7-1.8s-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3A2.8 2.8 0 0 0 5 8.9a4.9 4.9 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c.6.3 1.1.4 1.5.5a3.5 3.5 0 0 0 1.6.1c.5-.1 1.4-.6 1.6-1.1s.2-1 .1-1.1z\"/></svg><span>Agendar no WhatsApp</span></a>",
+      "css": ".ds-btn-wa { display: inline-flex; align-items: center; gap: 12px; min-height: 56px; padding: 0 30px; border-radius: 999px; background: var(--ouro); color: var(--preto); font-family: var(--texto); font-weight: 600; font-size: 1.0625rem; letter-spacing: .01em; text-decoration: none; box-shadow: 0 10px 34px -12px rgba(243,217,139,.55); transition: background-color .35s var(--ease), box-shadow .35s var(--ease); } .ds-btn-wa:hover { background: var(--luz-alta); box-shadow: 0 14px 44px -10px rgba(243,217,139,.8); } .ds-btn-wa:active { background: var(--luz); } .ds-btn-wa:focus-visible { outline: 2px solid var(--luz-alta); outline-offset: 4px; }"
+    },
+    {
+      "name": "Agendar da nav",
+      "kind": "button",
+      "refersTo": "botao-nav-agendar",
+      "description": "Versão em contorno do agendamento, usada dentro da navegação.",
+      "html": "<a class=\"ds-nav-wa\" href=\"#\">Agendar</a>",
+      "css": ".ds-nav-wa { display: inline-flex; align-items: center; min-height: 44px; padding: 0 22px; border-radius: 999px; border: 1px solid var(--ouro); color: var(--luz); font-family: var(--texto); font-size: .95rem; font-weight: 500; text-decoration: none; transition: background-color .3s var(--ease), color .3s var(--ease); } .ds-nav-wa:hover { background: var(--ouro); color: var(--preto); } .ds-nav-wa:focus-visible { outline: 2px solid var(--luz-alta); outline-offset: 4px; }"
+    },
+    {
+      "name": "Link de luz",
+      "kind": "custom",
+      "refersTo": "link-luz",
+      "description": "Ação secundária em texto, com sublinhado bronze que acende.",
+      "html": "<a class=\"ds-link-luz\" href=\"#\">Escolher serviços <svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></a>",
+      "css": ".ds-link-luz { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; color: var(--luz); font-family: var(--texto); font-size: 1.0625rem; font-weight: 500; text-decoration: underline; text-decoration-color: var(--bronze); text-decoration-thickness: 1px; text-underline-offset: 7px; transition: color .3s var(--ease), text-decoration-color .3s var(--ease); } .ds-link-luz:hover { color: var(--luz-alta); text-decoration-color: var(--luz-alta); } .ds-link-luz:focus-visible { outline: 2px solid var(--luz-alta); outline-offset: 4px; border-radius: 4px; }"
+    },
+    {
+      "name": "Espelho (moldura)",
+      "kind": "custom",
+      "refersTo": "espelho",
+      "description": "Moldura de vidro com anel de LED: apagada em bronze, acesa com halo. Passe o cursor para acender a da esquerda.",
+      "html": "<div class=\"ds-mirror-row\"><div class=\"ds-mirror ds-mirror-apagado\"></div><div class=\"ds-mirror\"></div></div>",
+      "css": ".ds-mirror-row { display: flex; gap: 56px; padding: 48px; background: var(--preto); } .ds-mirror { position: relative; isolation: isolate; width: 200px; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle at 50% 28%, #3a2f17, #17130d 64%); } .ds-mirror::before { content: ''; position: absolute; inset: 14px; border-radius: inherit; border: 6px solid var(--luz-alta); box-shadow: var(--halo), var(--halo-dentro); transition: border-color .9s var(--ease), box-shadow .9s var(--ease); } .ds-mirror::after { content: ''; position: absolute; inset: 0; border-radius: inherit; border: 1px solid var(--linha); } .ds-mirror-apagado { background: var(--vidro); } .ds-mirror-apagado::before { border-color: var(--bronze); box-shadow: none; } .ds-mirror-apagado:hover::before { border-color: var(--luz-alta); box-shadow: var(--halo), var(--halo-dentro); }"
+    },
+    {
+      "name": "Espelho de serviço",
+      "kind": "input",
+      "refersTo": "espelho-servico",
+      "description": "Caixa de seleção vestida de espelho: clicar acende o anel e o nome do serviço.",
+      "html": "<div class=\"ds-espelho\"><input type=\"checkbox\" id=\"ds-s-mega\"><label for=\"ds-s-mega\"><span class=\"ds-brilho\" aria-hidden=\"true\"></span><span>Mega Hair</span></label></div>",
+      "css": ".ds-espelho { position: relative; width: 180px; padding: 32px; background: var(--preto); box-sizing: content-box; } .ds-espelho input { position: absolute; top: 0; left: 50%; width: 1px; height: 1px; opacity: 0; } .ds-espelho label { position: relative; isolation: isolate; display: grid; place-items: center; text-align: center; width: 100%; aspect-ratio: 1; padding: 17%; box-sizing: border-box; border-radius: 50%; cursor: pointer; background: radial-gradient(circle at 50% 30%, #221d18, var(--vidro) 62%); border: 1px solid var(--linha); font-family: var(--display); font-weight: 500; font-size: 1.3rem; line-height: 1.1; letter-spacing: -.01em; color: var(--ouro); transition: color .5s var(--ease); } .ds-espelho .ds-brilho { position: absolute; inset: 0; z-index: -1; border-radius: 50%; opacity: 0; background: radial-gradient(circle at 50% 30%, #57461f, #241d10 68%); transition: opacity .5s var(--ease); } .ds-espelho label::before { content: ''; position: absolute; inset: 8px; border-radius: 50%; pointer-events: none; border: 4px solid var(--bronze); transition: border-color .5s var(--ease), box-shadow .5s var(--ease); } .ds-espelho label::after { content: 'Acender'; position: absolute; left: 0; right: 0; bottom: 15%; font-family: var(--texto); font-size: .6875rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--suave); transition: color .5s var(--ease); } .ds-espelho label:hover::before { border-color: var(--ouro); } .ds-espelho input:focus-visible + label { outline: 2px solid var(--luz-alta); outline-offset: 6px; } .ds-espelho input:checked + label { color: var(--luz-alta); } .ds-espelho input:checked + label .ds-brilho { opacity: 1; } .ds-espelho input:checked + label::before { border-color: var(--luz-alta); box-shadow: 0 8px 30px -4px rgba(243,217,139,.36), 0 2px 10px -2px rgba(243,217,139,.3), inset 0 0 16px 1px rgba(243,217,139,.4); } .ds-espelho input:checked + label::after { content: 'Aceso'; color: var(--luz); }"
+    },
+    {
+      "name": "Navegação",
+      "kind": "nav",
+      "refersTo": "botao-nav-agendar",
+      "description": "Barra fixa no estado rolado: preto translúcido, fio dourado, nome em didone e links que acendem.",
+      "html": "<nav class=\"ds-nav\"><span class=\"ds-nav-nome\">Don La Vié</span><div class=\"ds-nav-links\"><a href=\"#\">Serviços</a><a href=\"#\">Trabalhos</a><a href=\"#\">O salão</a><a href=\"#\">Contato</a><a class=\"ds-nav-cta\" href=\"#\">Agendar</a></div></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; gap: 32px; padding: 14px 32px; background: rgba(10,9,8,.9); backdrop-filter: blur(14px); border-bottom: 1px solid var(--linha); font-family: var(--texto); } .ds-nav-nome { font-family: var(--display); font-size: 1.5rem; font-weight: 500; letter-spacing: -.01em; color: var(--luz); white-space: nowrap; } .ds-nav-links { display: flex; align-items: center; gap: 32px; } .ds-nav-links a { display: inline-flex; align-items: center; min-height: 44px; font-size: .95rem; color: var(--suave); text-decoration: none; transition: color .3s var(--ease), background-color .3s var(--ease); } .ds-nav-links a:hover { color: var(--luz-alta); } .ds-nav-links a:focus-visible { outline: 2px solid var(--luz-alta); outline-offset: 4px; border-radius: 4px; } .ds-nav-links .ds-nav-cta { padding: 0 22px; border-radius: 999px; border: 1px solid var(--ouro); color: var(--luz); font-weight: 500; } .ds-nav-links .ds-nav-cta:hover { background: var(--ouro); color: var(--preto); }"
+    },
+    {
+      "name": "Moldura de embed",
+      "kind": "card",
+      "refersTo": "moldura-embed",
+      "description": "Retângulo de vidro com fio dourado, reservado a iframes de terceiros (Instagram, mapa).",
+      "html": "<div class=\"ds-embed\"><a class=\"ds-embed-fallback\" href=\"#\">Ver post no Instagram</a></div>",
+      "css": ".ds-embed { width: 260px; aspect-ratio: 1/1.245; overflow: hidden; border-radius: 22px; background: var(--vidro); border: 1px solid var(--linha); } .ds-embed-fallback { display: grid; place-items: center; height: 100%; padding: 24px; text-align: center; font-family: var(--texto); color: var(--luz); font-weight: 500; text-decoration: underline; text-decoration-color: var(--bronze); text-underline-offset: 6px; } .ds-embed-fallback:hover { color: var(--luz-alta); text-decoration-color: var(--luz-alta); } .ds-embed-fallback:focus-visible { outline: 2px solid var(--luz-alta); outline-offset: -6px; }"
+    },
+    {
+      "name": "Lista com fio",
+      "kind": "custom",
+      "description": "Itens separados por fio dourado de 1px, com título em didone e texto em areia; substitui cartões.",
+      "html": "<dl class=\"ds-motivos\"><div><dt>Direção de visagismo</dt><dd>Don Alexandre conduz cada atendimento a partir do que valoriza o seu rosto.</dd></div><div><dt>Especialistas em mega hair</dt><dd>Nó italiano, queratina, fita e ponto americano, da aplicação à manutenção.</dd></div></dl>",
+      "css": ".ds-motivos { margin: 0; max-width: 560px; font-family: var(--texto); } .ds-motivos > div { padding: 24px 0; border-top: 1px solid var(--linha); } .ds-motivos dt { font-family: var(--display); font-size: 1.5rem; font-weight: 500; color: var(--luz); letter-spacing: -.01em; } .ds-motivos dd { margin: 6px 0 0; color: var(--suave); font-size: 1.0625rem; line-height: 1.6; max-width: 54ch; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Espelho de Camarim",
+    "overview": "**Creative North Star: \"Espelho de Camarim\"**\n\nA página é o camarim do salão com a luz geral apagada. O ambiente é preto fosco, quase sem superfícies, e o que importa aparece como um espelho de bancada: um círculo ou uma cápsula de vidro escuro com um anel de LED. Apagado, o anel é um contorno bronze e a imagem fica escurecida. Aceso, o anel vira uma faixa clara com halo quente e a imagem ganha a cor real. O dourado não é tinta de parede: ele só existe onde alguma coisa está acesa ou recebendo luz.\n\nA densidade é baixa e o ritmo é vertical, com muito preto entre os blocos. O movimento é um só: luz acendendo. Anel, halo, brilho da imagem e cor do texto mudam; o conteúdo não desliza, não cresce e não entra de lado. O único deslocamento que existe no build são os dois traços do botão de menu virando um X. Sem JavaScript tudo aparece aceso, e com `prefers-reduced-motion: reduce` todas as transições e animações são desligadas.\n\nO sistema recusa o arranjo comum de salão: foto retangular ao lado do título e grade de cartões de serviço com ícones. Os serviços são seis espelhos que a visitante acende, e a escolha reescreve a mensagem de todos os botões de WhatsApp.",
+    "keyCharacteristics": [
+      "Sala preta (`preto`) como único fundo de página; nenhuma seção muda de cor de fundo.",
+      "Moldura própria é sempre espelho: círculo ou cápsula, com anel de LED e fio de vidro.",
+      "Três degraus de luz: bronze apagado, ouro em repouso, luz alta aceso.",
+      "Didone dourada para o que é dito em voz alta; grotesca humanista em marfim e areia para o resto.",
+      "Movimento só de luz, com a mesma curva de saída exponencial em tudo.",
+      "Uma ação: agendar pelo WhatsApp, sempre em cápsula dourada cheia."
+    ],
+    "rules": [
+      {
+        "name": "A Regra do Dourado Só na Luz",
+        "body": "Dourado aparece em coisa que emite ou recebe luz: anel de LED, título, botão, fio. Nunca como fundo de seção, faixa ou painel. Se tirar o dourado de um elemento não \"apaga\" nada, ele não devia ser dourado.",
+        "section": "colors"
+      },
+      {
+        "name": "A Regra dos Três Degraus",
+        "body": "Todo estado sobe a mesma escada: `bronze` (apagado), `ouro` (em repouso ou hover do apagado), `luz-alta` (aceso ou hover do que já é dourado). Não existe quarta cor de estado, nem cor de sucesso ou de erro.",
+        "section": "colors"
+      },
+      {
+        "name": "A Regra da Didone que Brilha",
+        "body": "Bodoni Moda só aparece em peso 500 e só em `luz`, `ouro` ou `luz-alta`. Nunca em marfim, nunca em areia, nunca em caixa alta. O itálico (peso 400) é reservado a uma ênfase curta dentro do h1.",
+        "section": "typography"
+      },
+      {
+        "name": "A Regra dos Números Alinhados",
+        "body": "Telefones usam `font-variant-numeric: tabular-nums`.",
+        "section": "typography"
+      },
+      {
+        "name": "A Regra do Halo",
+        "body": "Sombra é luz: quente, difusa e na cor `luz`. Apagado não tem sombra nenhuma. Nada de sombra dura deslocada, nada de sombra cinza para \"levantar\" um bloco.",
+        "section": "elevation"
+      },
+      {
+        "name": "A Regra do Acender",
+        "body": "Mudança de estado anima só `border-color`, `box-shadow`, `filter`, `opacity`, `color` e `background-color`, sempre com `cubic-bezier(.16,1,.3,1)`: 0,9s para espelhos grandes, 0,5s para espelhos de serviço, 0,3 a 0,4s para hover. O espelho do hero acende no carregamento (1,5s, atraso de 0,2s) enquanto a foto sai de `brightness(.3) saturate(.5)`; os demais acendem uma vez ao entrar na tela e não apagam mais.",
+        "section": "elevation"
+      },
+      {
+        "name": "A Regra do Espelho",
+        "body": "Foto ou bloco de destaque do próprio salão só entra em círculo ou cápsula com anel de LED. Retângulo arredondado é reservado a iframe de terceiro e ao logo, e nunca ganha anel.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "Do manter `preto` (#0A0908) como fundo de toda a página e usar `vidro` só dentro de espelhos e molduras de embed.",
+      "Do emoldurar toda foto do salão em círculo ou cápsula com anel de LED, e deixar a foto escurecida enquanto o anel estiver em `bronze`.",
+      "Do seguir a escada `bronze` → `ouro` → `luz-alta` para qualquer estado novo.",
+      "Do animar só luz (cor de borda, sombra, filtro, opacidade, cor) com `cubic-bezier(.16,1,.3,1)`.",
+      "Do escrever títulos em Bodoni Moda peso 500 na cor `luz`, com entrelinha entre 1.04 e 1.1.",
+      "Do dar a toda ação de agendamento a cápsula `ouro` cheia de 56px e a todo link 44px de altura mínima.",
+      "Do garantir que sem JavaScript tudo apareça aceso e que `prefers-reduced-motion: reduce` desligue transições e animações.",
+      "Do separar itens de lista com fio de 1px `linha`, sem caixa em volta."
+    ],
+    "donts": [
+      "Don't usar dourado como fundo de seção, faixa ou painel; dourado cheio só em botão de agendar.",
+      "Don't pôr conteúdo do próprio salão em cartão retangular; retângulo arredondado é só para iframe de terceiro e para o logo.",
+      "Don't usar sombra escura para elevar blocos nem sombra dura deslocada; a única sombra escura é a da barra fixa.",
+      "Don't fazer conteúdo deslizar, crescer ou entrar de lado; nada de `transform` em entrada de seção ou em hover.",
+      "Don't escrever Bodoni Moda em marfim, areia ou caixa alta, nem usar `bronze` como cor de texto.",
+      "Don't ilustrar serviços ou seções com ícones; os únicos SVGs são a marca do WhatsApp nos botões de agendar, a seta do link de luz e os traços do menu.",
+      "Don't substituir foto real por ilustração ou banco de imagens dentro de um espelho.",
+      "Don't criar uma segunda cor de destaque; o sistema tem uma família dourada e mais nada."
+    ]
+  }
+}

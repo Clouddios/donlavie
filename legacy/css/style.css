@@ -1,0 +1,365 @@
+/* Don La Vié — Espelho de Camarim
+   Preto fosco como ambiente; dourado só onde há luz.
+   Toda moldura é um espelho com anel de LED: apagado = bronze, aceso = luz. */
+
+:root{
+  --preto:#0A0908;
+  --carvao:#13110F;
+  --vidro:#1B1815;
+  --bronze:#5E4D2A;
+  --ouro:#D4AF5A;
+  --luz:#F3D98B;
+  --luz-alta:#FFF1C9;
+  --marfim:#F4ECDD;
+  --suave:#B8AC96;
+  --linha:rgba(212,175,90,.24);
+  --display:'Bodoni Moda','Didot','Bodoni MT',serif;
+  --texto:'Hanken Grotesk',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --ease:cubic-bezier(.16,1,.3,1);
+  --halo:0 14px 70px -6px rgba(243,217,139,.34), 0 4px 18px -2px rgba(243,217,139,.3);
+  --halo-dentro:inset 0 0 34px 2px rgba(243,217,139,.38);
+}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{color-scheme:dark;scrollbar-color:var(--bronze) var(--preto);-webkit-text-size-adjust:100%}
+@media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{
+  background:var(--preto);color:var(--marfim);
+  font-family:var(--texto);font-size:1.0625rem;line-height:1.6;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+::selection{background:var(--ouro);color:var(--preto)}
+img{display:block;max-width:100%}
+ul{list-style:none}
+address{font-style:normal}
+a{color:inherit;text-decoration:none}
+a,button,label{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+h1,h2{font-family:var(--display);font-weight:500;color:var(--luz);text-wrap:balance;letter-spacing:-.02em}
+p{text-wrap:pretty}
+:focus-visible{outline:2px solid var(--luz-alta);outline-offset:4px;border-radius:4px}
+
+.wrap{width:100%;max-width:1240px;margin-inline:auto;padding-inline:clamp(20px,4vw,48px)}
+
+.skip-link{
+  position:absolute;top:-100px;left:16px;z-index:100;
+  background:var(--ouro);color:var(--preto);
+  padding:12px 20px;border-radius:999px;font-weight:600;
+}
+.skip-link:focus{top:16px}
+
+/* ---------- O espelho ---------- */
+.mirror{position:relative;isolation:isolate;background:var(--vidro);border-radius:50%}
+.mirror::before{ /* a faixa de LED */
+  content:"";position:absolute;inset:var(--recuo,16px);z-index:2;pointer-events:none;
+  border-radius:inherit;border:var(--led,7px) solid var(--luz-alta);
+  box-shadow:var(--halo),var(--halo-dentro);
+  transition:border-color .9s var(--ease),box-shadow .9s var(--ease);
+}
+.mirror::after{ /* a borda do vidro */
+  content:"";position:absolute;inset:0;z-index:3;pointer-events:none;
+  border-radius:inherit;border:1px solid var(--linha);
+}
+.mirror > img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:inherit;
+  transition:filter .9s var(--ease);
+}
+/* apagado até entrar na tela (só quando o JS está rodando) */
+.js .mirror[data-acende]:not(.aceso)::before{border-color:var(--bronze);box-shadow:none}
+.js .mirror[data-acende]:not(.aceso) > img{filter:brightness(.4) saturate(.6)}
+
+/* ---------- Botões e links ---------- */
+.btn-wa{
+  display:inline-flex;align-items:center;gap:12px;min-height:56px;
+  padding:0 30px;border-radius:999px;
+  background:var(--ouro);color:var(--preto);
+  font-weight:600;font-size:1.0625rem;letter-spacing:.01em;
+  box-shadow:0 10px 34px -12px rgba(243,217,139,.55);
+  transition:background-color .35s var(--ease),box-shadow .35s var(--ease);
+}
+.btn-wa:hover{background:var(--luz-alta);box-shadow:0 14px 44px -10px rgba(243,217,139,.8)}
+.btn-wa:active{background:var(--luz);box-shadow:0 4px 14px -8px rgba(243,217,139,.5);transition-duration:.08s}
+.link-luz{
+  display:inline-flex;align-items:center;gap:10px;min-height:44px;
+  color:var(--luz);font-weight:500;
+  text-decoration:underline;text-decoration-color:var(--bronze);
+  text-decoration-thickness:1px;text-underline-offset:7px;
+  transition:color .3s var(--ease),text-decoration-color .3s var(--ease);
+}
+.link-luz:hover{color:var(--luz-alta);text-decoration-color:var(--luz-alta)}
+
+/* ---------- Nav ---------- */
+nav{
+  position:fixed;inset:0 0 auto 0;z-index:50;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px max(clamp(20px,4vw,48px),calc(50vw - 620px + 48px));
+  border-bottom:1px solid transparent;
+  transition:background-color .4s var(--ease),border-color .4s var(--ease);
+}
+nav.scrolled{background:rgba(10,9,8,.9);backdrop-filter:blur(14px);border-bottom-color:var(--linha)}
+.brand{display:inline-flex;align-items:center;gap:14px;border-radius:14px}
+.brand-nome{font-family:var(--display);font-size:1.5rem;font-weight:500;letter-spacing:-.01em;color:var(--luz);white-space:nowrap}
+.brand-logo{width:52px;height:52px;border-radius:14px;object-fit:cover;border:1px solid var(--linha)}
+.nav-links{display:flex;align-items:center;gap:clamp(20px,3vw,40px)}
+.nav-links a{
+  display:inline-flex;align-items:center;min-height:44px;
+  font-size:.95rem;color:var(--suave);transition:color .3s var(--ease);
+}
+.nav-links a:hover{color:var(--luz-alta)}
+.nav-links .nav-wa{
+  padding:0 22px;border-radius:999px;border:1px solid var(--ouro);color:var(--luz);font-weight:500;
+  transition:background-color .3s var(--ease),color .3s var(--ease);
+}
+.nav-links .nav-wa:hover{background:var(--ouro);color:var(--preto)}
+.menu-btn{
+  display:none;width:48px;height:48px;align-items:center;justify-content:center;
+  background:none;border:1px solid var(--linha);border-radius:50%;color:var(--luz);cursor:pointer;
+}
+.menu-btn path{transition:transform .3s var(--ease);transform-box:view-box;transform-origin:center}
+.menu-btn[aria-expanded="true"] .menu-a{transform:translateY(4px) rotate(45deg)}
+.menu-btn[aria-expanded="true"] .menu-b{transform:translateY(-4px) rotate(-45deg)}
+
+/* ---------- Hero ---------- */
+.hero{min-height:100svh;display:flex;align-items:center;padding:112px 0 72px}
+.hero-grid{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:clamp(32px,5vw,80px);align-items:center;
+}
+.hero h1{font-size:clamp(2.5rem,4.3vw,4.25rem);line-height:1.04}
+.hero h1 em{font-style:italic;font-weight:400;color:var(--luz-alta)}
+.lede{color:var(--suave);font-size:1.1875rem;max-width:46ch;margin-top:28px}
+.cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:18px 30px;margin-top:40px}
+.hero-mirror{
+  --recuo:clamp(12px,1.6vw,22px);--led:clamp(6px,.7vw,10px);
+  width:min(100%,76svh,680px);aspect-ratio:1;justify-self:end;
+}
+.hero-mirror > img{object-position:62% 50%}
+@media(prefers-reduced-motion:no-preference){
+  .hero-mirror::before{animation:acender 1.5s var(--ease) .2s backwards}
+  .hero-mirror > img{animation:revelar 1.8s var(--ease) .2s backwards}
+  /* o texto acende em sequência: título, apoio, ação. Só opacidade, nada se desloca. */
+  .hero h1,.hero .lede,.hero .cta-row{animation:surgir .9s var(--ease) backwards}
+  .hero .lede{animation-delay:.14s}
+  .hero .cta-row{animation-delay:.28s}
+  /* texto trocado pelo JS (pedido e rótulo dos botões) reacende em vez de pular */
+  .reacende{animation:reacender .55s var(--ease)}
+}
+@keyframes acender{
+  0%{border-color:var(--bronze);box-shadow:none}
+  100%{border-color:var(--luz-alta);box-shadow:var(--halo),var(--halo-dentro)}
+}
+@keyframes surgir{0%{opacity:0}100%{opacity:1}}
+@keyframes reacender{0%{opacity:.25}100%{opacity:1}}
+@keyframes revelar{0%{filter:brightness(.3) saturate(.5)}100%{filter:none}}
+
+/* ---------- Seções ---------- */
+section{padding-block:clamp(88px,11vw,152px)}
+.sec-head{max-width:760px;margin-bottom:clamp(48px,6vw,80px)}
+h2{font-size:clamp(2.1rem,4.2vw,3.6rem);line-height:1.06}
+.sec-head p{color:var(--suave);margin-top:20px;max-width:52ch}
+.so-js{display:none}
+.js .so-js{display:block}
+
+/* ---------- Serviços: a bancada de espelhos ---------- */
+.bancada{
+  display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:0 clamp(16px,2vw,28px);
+  --halo-p:0 8px 30px -4px rgba(243,217,139,.36), 0 2px 10px -2px rgba(243,217,139,.3);
+  --halo-p-dentro:inset 0 0 16px 1px rgba(243,217,139,.4);
+}
+.espelho{position:relative;display:grid;grid-template-rows:auto 1fr;text-align:left}
+.espelho input{position:absolute;top:0;left:50%;width:1px;height:1px;opacity:0}
+.espelho h3{font:inherit}
+.espelho label{
+  position:relative;isolation:isolate;display:grid;place-items:center;text-align:center;
+  width:100%;aspect-ratio:1;padding:17%;
+  border-radius:50%;cursor:pointer;overflow:hidden;
+  background:radial-gradient(circle at 50% 30%,#221d18,var(--vidro) 62%);
+  border:1px solid var(--linha);
+  font-family:var(--display);font-weight:500;font-size:clamp(1rem,1.45vw,1.3rem);line-height:1.1;
+  letter-spacing:-.01em;color:var(--ouro);text-wrap:balance;
+  transition:color .5s var(--ease);
+}
+.espelho label{overflow:visible}
+.espelho .brilho{ /* o vidro aceso: aparece em fade, junto com o anel */
+  position:absolute;inset:0;z-index:-1;border-radius:50%;opacity:0;
+  background:radial-gradient(circle at 50% 30%,#57461f,#241d10 68%);
+  transition:opacity .5s var(--ease);
+}
+.espelho label::before{
+  content:"";position:absolute;inset:8px;border-radius:50%;pointer-events:none;
+  border:4px solid var(--bronze);
+  transition:border-color .5s var(--ease),box-shadow .5s var(--ease);
+}
+.js .espelho label::after{
+  content:"Acender";position:absolute;left:0;right:0;bottom:15%;
+  font-family:var(--texto);font-size:.6875rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--suave);transition:color .5s var(--ease);
+}
+.espelho label:hover::before{border-color:var(--ouro)}
+@media(hover:hover) and (pointer:fine){
+  /* prévia: o vidro ganha um pouco de luz antes de acender de vez */
+  .espelho input:not(:checked) + h3 label:hover .brilho{opacity:.38}
+  .espelho input:not(:checked) + h3 label:hover{color:var(--luz)}
+  .insta-card:hover{border-color:var(--ouro)}
+}
+.espelho label:active::before{border-color:var(--luz);transition-duration:.08s}
+.espelho input:focus-visible + h3 label{outline:2px solid var(--luz-alta);outline-offset:6px}
+.espelho input:checked + h3 label{color:var(--luz-alta)}
+.espelho input:checked + h3 .brilho{opacity:1}
+.espelho input:checked + h3 label::before{border-color:var(--luz-alta);box-shadow:var(--halo-p),var(--halo-p-dentro)}
+.js .espelho input:checked + h3 label::after{content:"Aceso";color:var(--luz)}
+/* a bancada: uma linha sob os espelhos, e as descrições abaixo dela */
+.espelho p{
+  color:var(--suave);font-size:.9375rem;line-height:1.5;
+  --meio:calc(clamp(16px,2vw,28px) / 2);
+  margin:28px calc(-1 * var(--meio)) 0;padding:20px var(--meio) 0;border-top:1px solid var(--linha);
+}
+.espelho:first-child p{margin-left:0;padding-left:0}
+.espelho:last-child p{margin-right:0;padding-right:0}
+.pedido{
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 32px;
+  margin-top:clamp(48px,6vw,80px);padding-top:28px;border-top:1px solid var(--linha);
+  color:var(--marfim);font-size:1.125rem;
+}
+
+/* ---------- Trabalhos (Instagram) ---------- */
+.insta-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.insta-grid{align-items:start}
+/* cada card termina logo abaixo da mídia: 54px de cabeçalho do embed + largura × proporção da mídia.
+   --r é a proporção altura/largura da mídia do post (vídeos 1.245; fotos definidas no HTML). */
+.insta-card{
+  box-sizing:content-box;aspect-ratio:1/var(--r,1.245);padding-bottom:54px;
+  overflow:hidden;border-radius:22px;
+  background:var(--vidro);border:1px solid var(--linha);
+  transition:border-color .5s var(--ease);
+}
+.insta-card blockquote.instagram-media{margin:0!important;width:100%!important;min-width:0!important;height:100%!important}
+.insta-card iframe{width:100%!important;min-width:0!important;max-width:none!important;margin:0!important;border:0!important;border-radius:0!important}
+.insta-fallback{
+  display:grid;place-items:center;height:100%;padding:24px;text-align:center;
+  color:var(--luz);font-weight:500;text-decoration:underline;text-decoration-color:var(--bronze);text-underline-offset:6px;
+}
+.insta-grid{transition:filter .9s var(--ease)}
+.js .insta-grid[data-acende]:not(.aceso){filter:brightness(.45) saturate(.6)}
+.insta-more{margin-top:40px}
+
+/* ---------- O salão ---------- */
+.salao-grid{display:grid;grid-template-columns:minmax(0,380px) minmax(0,1fr);gap:clamp(40px,7vw,112px);align-items:center}
+.capsula{--recuo:14px;--led:6px;width:100%;aspect-ratio:5/8;border-radius:999px}
+.motivos{margin-top:clamp(32px,4vw,52px)}
+.motivos > div{padding:24px 0;border-top:1px solid var(--linha)}
+.motivos dt{font-family:var(--display);font-size:1.5rem;font-weight:500;color:var(--luz);letter-spacing:-.01em}
+.motivos dd{color:var(--suave);margin-top:6px;max-width:54ch}
+
+/* ---------- Fecho / contato ---------- */
+.espelho-fecho{
+  --recuo:clamp(14px,2vw,26px);--led:clamp(6px,.8vw,10px);
+  width:min(100%,680px);aspect-ratio:1;margin-inline:auto;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+  padding:clamp(56px,11%,96px);
+  background:radial-gradient(circle at 50% 28%,#3a2f17,#17130d 64%);
+}
+.espelho-fecho h2{font-size:clamp(1.9rem,4vw,3.2rem);max-width:13ch}
+.espelho-fecho p{color:var(--marfim);margin:20px 0 30px;max-width:34ch}
+.info-row{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px clamp(24px,4vw,64px);
+  margin-top:clamp(64px,8vw,104px);padding-top:36px;border-top:1px solid var(--linha);
+}
+.info-item h3{font-family:var(--display);font-size:1.375rem;font-weight:500;color:var(--luz);margin-bottom:10px}
+.info-item span{color:var(--suave)}
+.tel-list span{font-size:.9rem;margin-left:8px}
+.tel-list a{display:inline-flex;align-items:center;min-height:44px;font-variant-numeric:tabular-nums;transition:color .3s var(--ease)}
+.tel-list a:hover{color:var(--luz-alta)}
+.tel-list{margin-top:-10px}
+.map-embed{margin-top:56px;aspect-ratio:16/6;border-radius:28px;overflow:hidden;border:1px solid var(--linha)}
+.map-embed iframe{width:100%;height:100%;border:0;display:block;filter:invert(.92) hue-rotate(180deg) saturate(.55) brightness(.95) contrast(.92)}
+
+/* ---------- Rodapé ---------- */
+footer{padding:40px 0 56px;border-top:1px solid var(--linha)}
+.foot-grid{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px 32px}
+.foot-social{display:flex;gap:28px}
+.foot-social a{display:inline-flex;align-items:center;min-height:44px;color:var(--suave);transition:color .3s var(--ease)}
+.foot-social a:hover{color:var(--luz-alta)}
+footer p{color:var(--suave);font-size:.95rem}
+
+/* ---------- Barra fixa de agendamento ---------- */
+.wa-bar{
+  position:fixed;z-index:60;right:22px;bottom:calc(22px + env(safe-area-inset-bottom));
+  display:inline-flex;align-items:center;gap:12px;min-height:56px;padding:0 26px;
+  border-radius:999px;background:var(--ouro);color:var(--preto);font-weight:600;
+  box-shadow:0 14px 34px -10px rgba(0,0,0,.85);
+  transition:background-color .35s var(--ease),opacity .35s var(--ease),visibility .35s;
+}
+.wa-bar:hover{background:var(--luz-alta)}
+.wa-bar:active{background:var(--luz);transition-duration:.08s}
+.wa-bar.is-hidden{opacity:0;visibility:hidden;pointer-events:none}
+@media(min-width:901px){.wa-bar{display:none}} /* no desktop o "Agendar" da nav já está sempre à vista */
+
+/* ---------- Responsivo ---------- */
+@media(max-width:900px){
+  .menu-btn{display:flex}
+  .nav-links{
+    position:absolute;top:100%;left:0;right:0;
+    flex-direction:column;align-items:stretch;gap:0;
+    padding:8px clamp(20px,4vw,48px) 24px;
+    background:var(--preto);border-bottom:1px solid var(--linha);
+    max-height:calc(100dvh - 80px);overflow-y:auto;overscroll-behavior:contain;
+    opacity:0;visibility:hidden;
+    transition:opacity .25s var(--ease),visibility 0s .25s;
+  }
+  .nav-links.open{opacity:1;visibility:visible;transition-delay:0s}
+  .nav-links a{min-height:56px;font-size:1.125rem;border-bottom:1px solid var(--linha)}
+  .nav-links .nav-wa{justify-content:center;margin-top:18px;border-bottom:1px solid var(--ouro)}
+  nav:has(.nav-links.open){background:var(--preto);backdrop-filter:none}
+
+  .hero{padding:104px 0 56px}
+  .hero-grid{grid-template-columns:1fr}
+  .hero-mirror{width:min(100%,520px);justify-self:center}
+  .bancada{grid-template-columns:repeat(3,minmax(0,1fr));gap:48px clamp(16px,3vw,28px)}
+  .espelho p{margin-inline:0;padding-inline:0}
+  .espelho label{font-size:1.25rem}
+  .insta-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  footer{padding-bottom:112px}
+  .salao-grid{grid-template-columns:1fr}
+  .capsula{justify-self:center;width:min(100%,340px)}
+  .map-embed{aspect-ratio:16/9}
+}
+@media(max-width:560px){
+  body{font-size:1rem}
+  .lede{font-size:1.0625rem}
+  .btn-wa{width:100%;justify-content:center}
+  /* celular: cada serviço é uma linha, com o espelho como lâmpada à esquerda */
+  .bancada{grid-template-columns:1fr;gap:0}
+  .espelho{display:block;padding:20px 0;border-top:1px solid var(--linha)}
+  .espelho:last-child{border-bottom:1px solid var(--linha)}
+  .espelho label{
+    display:flex;align-items:center;gap:18px;text-align:left;min-height:64px;
+    aspect-ratio:auto;padding:0;border:0;border-radius:0;background:none;
+    font-size:1.5rem;
+  }
+  .espelho .brilho{inset:auto;left:4px;top:50%;width:48px;height:48px;margin-top:-24px;z-index:1}
+  .espelho label::before{
+    position:static;flex:none;width:56px;height:56px;inset:auto;
+    background:radial-gradient(circle at 50% 30%,#221d18,var(--vidro) 62%);
+  }
+  .js .espelho label::after{position:static;margin-left:auto;font-size:.75rem}
+  .espelho input:focus-visible + h3 label{outline-offset:4px;border-radius:8px}
+  .espelho p,.espelho:first-child p,.espelho:last-child p{margin:6px 0 0 74px;padding:0;border:0;font-size:1rem}
+  /* celular: uma fileira que desliza, com os seis posts */
+  .insta-grid{
+    display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;
+    margin-inline:calc(-1 * clamp(20px,4vw,48px));padding-inline:clamp(20px,4vw,48px);
+    scroll-padding-inline:clamp(20px,4vw,48px);scrollbar-width:none;
+  }
+  .insta-grid::-webkit-scrollbar{display:none}
+  .insta-grid{align-items:flex-start}
+  .insta-card{flex:none;width:84%;scroll-snap-align:start}
+  .brand-nome{font-size:1.3rem}
+  .espelho-fecho{aspect-ratio:auto;border-radius:220px;padding:92px 44px}
+  .espelho-fecho .btn-wa{padding:0 20px;gap:10px;font-size:1rem}
+  .info-row{grid-template-columns:1fr}
+  .map-embed{aspect-ratio:4/3;border-radius:22px}
+  .wa-bar{left:16px;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));justify-content:center}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
